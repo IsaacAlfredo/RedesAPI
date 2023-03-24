@@ -18,6 +18,7 @@ app.get('/users/:id', (req, res) => {
         return res.status(404).json({ error: 'Usuário não encontrado.' });
     }
     
+    res.set('User-Name', user.nome)
     res.set('Status-Code', 200)
     res.json(user);
 });
@@ -34,6 +35,7 @@ app.post('/users', (req, res) => {
     };
   
     users.push(newUser);
+    res.set('User-Name', newUser.nome)
     res.set('Status-Code', 200)
     res.json(newUser);
 });
@@ -62,6 +64,7 @@ app.put('/users/:id', (req, res) => {
     users[index] = updatedUser
 
     res.set('Status-Code', 200)
+    res.set('User-Name', user.nome)
     res.json(users[index]);
   });
 
@@ -77,6 +80,7 @@ app.delete('/users/:id', (req, res) => {
         }
   
     users.splice(index, 1);
+    res.set('User-Name', user.nome)
     res.set('Status-Code', 204)
     res.status(204).end();
 });
@@ -103,6 +107,7 @@ app.patch('/users/:id', (req, res) => {
   
     users[index] = updatedUser;
 
+    res.set('User-Name', user.nome)
     res.set('Status-Code', 200)
     res.json(users[index]);
 });
@@ -125,5 +130,6 @@ app.head('/users/:id', (req, res) => {
     }
 
     res.set('Status-Code', 200)
+    res.set('User-Name', user.nome)
     res.status().end();
 });
