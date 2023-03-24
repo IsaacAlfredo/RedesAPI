@@ -1,8 +1,8 @@
 {
-  "name": "nodejs",
+  "name": "redesapi",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "App/index.js",
   "scripts": {},
   "keywords": [],
   "author": "Isaac Alfredo",
